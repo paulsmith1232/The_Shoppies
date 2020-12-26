@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "A sample application for searching and adding movies to lists.",
+  "main": "index.js",
+  "engines": {
+    "node": "14.15.1",
+    "npm": "6.14.8"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulsmith1232/The_Shippies.git"
+  },
+  "author": "Paul Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulsmith1232/The_Shippies/issues"
+  },
+  "homepage": "https://github.com/paulsmith1232/The_Shippies#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
