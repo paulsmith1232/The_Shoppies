@@ -8,19 +8,25 @@
     "npm": "6.14.8"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paulsmith1232/The_Shippies.git"
+    "url": "git+https://github.com/paulsmith1232/The_Shoppies.git"
   },
   "author": "Paul Smith",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/paulsmith1232/The_Shippies/issues"
+    "url": "https://github.com/paulsmith1232/The_Shoppies/issues"
   },
-  "homepage": "https://github.com/paulsmith1232/The_Shippies#readme",
+  "homepage": "https://github.com/paulsmith1232/The_Shoppies#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.8",
+    "nodemon": "^2.0.6",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0"
   }
 }
