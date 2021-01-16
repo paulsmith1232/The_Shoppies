@@ -37,7 +37,7 @@ DisplayResults.propTypes = {
 
 const getMovieData = async (title) => {
   
-  const res = await fetch(`http://www.omdbapi.com/?s=${title}&apikey=e4ae7b4c`)
+  const res = await fetch(`https://www.omdbapi.com/?s=${title}&apikey=e4ae7b4c`)
   const json = await res.json();
   console.log(json)
   
