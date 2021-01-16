@@ -1,13 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import SearchContainer from './Search/SearchContainer';
+import ListContainer from './List/ListContainer';
+import BannerContainer from './Banner/BannerContainer';
+
 
 const Landing = () => {
   return (
-    <div style = {{ textAlign: 'center' }}>
-      <h1>
-        The Shoppies
-      </h1>
-      Pick and choose your favourite movies!
+    <div className='row'>
+      <BannerContainer />
+      <div className='rowB'>
+        <SearchContainer />
+        <ListContainer />
+      
+      </div>
     </div>
+   
   );
 };
 

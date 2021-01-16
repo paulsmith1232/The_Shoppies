@@ -25,8 +25,8 @@ class Header extends Component {
             The Shoppies
           </Link>
           <ul className="main-nav">
-            <li><a href="#">Leaderboard</a></li>
-              {this.renderContent()}
+            <li><a href="#">Submissions</a></li>
+            {this.renderContent()}
           </ul>
         </nav>
       </header>     
