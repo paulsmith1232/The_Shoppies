@@ -18,16 +18,15 @@ class Header extends Component {
     return (
       <header>
         <nav className="header-wrapper row">
-          <Link 
+          <p 
             to={'/'} 
             className="logo"
           >
             The Shoppies
-          </Link>
-          <ul className="main-nav">
-            <li><a href="#">Submissions</a></li>
-            {this.renderContent()}
-          </ul>
+          </p>
+          <p className="main-nav">
+            Pick your favourite movies to add to your list            
+          </p>
         </nav>
       </header>     
     );
@@ -38,3 +37,10 @@ function mapStateToProps({ auth }) {
 }
 
 export default connect(mapStateToProps)(Header);
+
+
+// Links for Submissions and Google Auth Login
+// <ul className="main-nav">
+// <li><a href="#">Submissions</a></li>
+// {this.renderContent()}
+// </ul>

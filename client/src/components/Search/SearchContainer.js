@@ -35,33 +35,17 @@ DisplayResults.propTypes = {
   results: PropTypes.array.isRequired
 }
 
-const getMovieData = async (title) => {
-  
+const getMovieData = async (title) => {  
   const res = await fetch(`https://www.omdbapi.com/?s=${title}&apikey=e4ae7b4c`)
-  const json = await res.json();
-  console.log(json)
-  
+  const json = await res.json();  
   return json;
 }
 
 class SearchContainer extends Component {
   state = {
-    title: 'Rambo', // REMOVE THIS AFTER TESTING
+    title: '',
     results: [],
     error: null
-  }
-  componentDidMount () {  // REMOVE THIS AFTER TESTING
-    getMovieData(this.state.title)
-      .then((data) => {        
-        this.setState({
-          results: Array.from(data.Search)
-        })
-      })
-      .catch(() => {
-        this.setState({
-          error: 'There was an error fetching the movie list'          
-        })
-      });
   }
 
 
@@ -107,11 +91,12 @@ class SearchContainer extends Component {
             <button
               type='submit'
               disabled={!this.state.title}
+              className="search-button"
             >
-              Submit
+              <i className="fa fa-search"></i>
             </button>
           </form>
-          {error && <p>Error finding movies</p>}
+          {error && <p className="error">No results</p>}
 
           {results && <DisplayResults results={results}/>}
       </div>

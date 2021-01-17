@@ -4,23 +4,22 @@ import { getList } from '../../selectors/listSelectors';
 import BannerCard from './BannerCard';
 
 function PrintBannerCards ({ results }) {
-  if(results.length >= 5){
-    
-    console.log(results)
+  if(results.length >= 5){    
     return (
-      <div className="">
-        <h1 className="center">Thank You!</h1>
+      <div className="banner-top">
+        <h2 className="center ">YOUR NOMINATIONS</h2>
         <ul className="banner-container">
           {results.map((search) => {
             const { title, year, imdbID, poster, plot } = search.content;  
             return (
-                  <BannerCard 
-                    title={title}
-                    year={year}
-                    imdbID={imdbID}
-                    poster={poster}
-                    plot={plot}
-                  />               
+              <BannerCard 
+                key={imdbID}
+                title={title}
+                year={year}
+                imdbID={imdbID}
+                poster={poster}
+                plot={plot}
+              />               
             )
           })}
         </ul>      
@@ -31,11 +30,8 @@ function PrintBannerCards ({ results }) {
 };
 
 const BannerContainer = ({ results }) => (
-  <ul>
-    <PrintBannerCards results={results}/>
-  </ul>
+  <PrintBannerCards results={results}/>
 );
-
 
 const mapStateToProps = state => {
   const results = getList(state);

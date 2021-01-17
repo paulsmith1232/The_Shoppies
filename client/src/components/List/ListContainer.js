@@ -11,8 +11,8 @@ function DisplayList ({ results }) {
 
         return (
           <li 
-          className="search-card-closed"
-          key={imdbID}>
+            className="list-card-closed"
+            key={imdbID}>
             <ListCard
               title={title}
               year={year}
@@ -28,7 +28,8 @@ function DisplayList ({ results }) {
 };
 
 const ListContainer = ({ results }) => (
-  <ul>
+  <ul className="list-container">
+    <h2 className="center list-container-heading">Nominations</h2>
     <DisplayList results={results}/>
   </ul>
 );

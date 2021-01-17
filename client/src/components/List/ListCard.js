@@ -15,35 +15,28 @@ class ListCard extends React.Component {
 
   render() {
     return (
-        <ul>       
+      <div>
+        <ul className="list-card"> 
+          <h2>
+            {this.props.title}           
+          </h2>
           <li>
-            <img
-              className="poster"
-              src={this.props.poster}
-              alt={`Avatar for ${this.props.title}`}
-            />
-          </li>
-          <li className="">
-            <h2>
-             {this.props.title}           
-            </h2>
+            <h3>
+              {this.props.year}              
+            </h3>
           </li>
           <li>
-           <h2>
-              <a href={this.props.imdbID}>
-                {this.props.year}
-              </a>
-            </h2>
-          </li>
-          <li>
-            <button
+            <button 
               type='submit'
               onClick={this.handleRemoveListItem}
             >
-            Remove
+              Remove
             </button>
           </li>      
         </ul>      
+      </div>
+      
+
     )
   }
 }

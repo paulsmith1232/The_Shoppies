@@ -8,8 +8,8 @@
 }
 
 html {
-  background-color: #fff;
-  color: #555;
+  background-color: #fbf5eb;
+  color: #42474c;
   font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 300;
   font-size: 20px;
@@ -20,13 +20,25 @@ li {
   list-style: none;
 }
 
+/* ----- HEADINGS ----- */
+h1 {  
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: 400;
+}
+
 h3 {
+  font-weight: 300;
   font-size: 18px;
 }
 
 h4 {
   font-size: 16px;
 }
+
 
 /* ------------------------------------------ */
 /* REUSABLE COMPONENTS */
@@ -41,6 +53,7 @@ h4 {
   margin: 50px auto; 
   display:flex;
   flex-direction: row;
+  position: relative;
 }
 
 .box {
@@ -56,12 +69,13 @@ h4 {
   text-align: center;
 }
 
-/* ----- HEADINGS ----- */
-h1 {  
-  font-weight: 300;
-  text-transform: uppercase;
+.error {
+  color: red;
+  margin-left: 260px;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 120%;
 }
-
 
 /* ----- PARAGRAPHS ----- */
 
@@ -76,27 +90,39 @@ h1 {
 /* HEADER */
 /* ------------------------------------------ */
 header{
-  background-color: darkgoldenrod;
+  margin-top: 50px;
+}
+
+.header-wrapper {
+  border-bottom: 3px solid #007f5f;
+  position: relative;
+  color: #007f5f;
 
 }
 
 .logo {  
   text-transform: uppercase;
-  color: #fff;
-  font-weight: 300;
+  color: #007f5f;
+  font-weight: 900;
   font-size: 200%;
   word-spacing: 4px;  
   letter-spacing: 1px;
+  text-decoration: none;
 }
 
 .main-nav {
   float: right;
   list-style: none;
+  vertical-align: text-bottom;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 120%;
+  font-weight: 500;
 }
 
-.main-nav li {
-  display: inline-block;
-  margin-left:40px;
+.main-nav ul {
+
 }
 
 .main-nav li a:link,
@@ -119,63 +145,197 @@ header{
 /* SEARCH */
 /* ------------------------------------------ */
 .search-container {
+  width:70%;
+}
+
+.search-container form{
+  overflow: hidden;
+  max-width: 83%;
+}
+
+.search-container input[type=text] {
+  padding: 6px;
+  width: 87%;
+  float: left;
+  border: none;
+
+}
+
+.search-button {
+  float: left;
+  padding: 10px 25px;
+  background: #ddd;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background: #ccc;
 }
 
 /* ----- CARD ----- */
 .search-card-closed {  
-  
+  margin: 4px 0;
+  background-color: #00996E ;
+  color: #fff;
+  border-radius: 2px;
+  max-width: 80%;
+  position: relative;
 }
+
 .search-card-closed li{  
   display: inline-block;
+  margin: 0 4px; 
 }
 
+.search-content-closed button {
+  position: absolute;
+  right: 2px;
+  bottom: 1px;
+  transition: 0.2s;
+  text-align: center;
+  background-color: #004c3f;
+  color: #fff;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 17px;
+  margin-bottom: 1px;
+}
 
-.poster{
-  max-width: 70px;
-  height: auto;
+.search-content-closed button:hover {
+  background-color: #042721;  
+}
+
+.search-content-closed button:disabled {
+  background-color: #042721;  
+  opacity: .4;
 }
 
 /* ------------------------------------------ */
 /* LIST */
 /* ------------------------------------------ */
+.list-container {
+  width: 30%;
+}
 
+.list-container-heading {
+  color: #007f5f;
+  font-size: 150%;
+  font-weight: 500;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #007f5f;
+}
+
+.list-card {  
+  margin: 4px 0;
+  padding: 4px;
+  background-color: #00996E ;
+  color: #fff;
+  border-radius: 2px;
+  position: relative;
+}
+
+.list-card h2 {
+  font-size: 110%;
+}
+
+.list-card li{  
+  display: inline-block;
+  margin: 12px 4px 0 0; 
+}
+
+.list-card button {
+  position: absolute;
+  right: 2px;
+  bottom: 1px;
+  transition: 0.2s;
+  text-align: center;
+  background-color: #4c2200;  
+  color: #fff;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-right: 2px;
+}
+
+.list-card button {
+  position: absolute;
+  right: 2px;
+  bottom: 1px;
+  transition: 0.2s;
+}
+
+.list-card button:hover {
+  background-color: #270104;
+}
 /* ------------------------------------------ */
 /* BANNER */
 /* ------------------------------------------ */
-.container {
-  
+.poster{
+  max-width: 50px;
+  max-height: 75px;
+  height: auto;
+}
+
+.banner-top {
+  border-radius: 4px;
+  margin-top: 10px;
+  background-color: #42474C;
+  color:#fff;
+}
+
+.banner-top h2 {
+  border-bottom: 2px solid #fbf5eb;
 }
 
 .banner-container{
   display: flex;
-}
+  justify-content: center;
 
-.banner-container li{
 }
 
 .banner-card {
   display: flex;
-  width: 500px;
-  padding-left: 5px;
-  padding-right: 5px;
+  width: 250px;
+  margin: 0px 5px;
+  position: relative;  
+}
+
+.banner-card:not(:last-child) {
+  border-right: 1px solid #fbf5eb;
 }
 
 .banner-card-left {
-  width: 30%;
-  padding-top: 4px;
+  width: 25%;
+  margin: 4px 0 4px 4px;
+  border-right: 1px solid #6b7177;
+
+}
+
+.banner-card-left img {
+  border-radius: 3px;
+  font-size: 80%;
 }
 
 
 .banner-card-right {
-  width: 70%;
-  margin-left: 7px;
-  
+  width: 60%;
+  margin: 4px 4px 4px 4px;
 }
 
-.banner-card li {
- 
+.banner-card-right h3 {
+  font-size: 85%;
+  position: absolute;
+}
+
+.banner-card-right p {
+  position: absolute;
+  bottom: 4px;
+  font-size: 80%;
 }
 
 /* ------------------------------------------ */
-/* LEADERBOARD */
+/* RANKINGS */
 /* ------------------------------------------ */

@@ -3,6 +3,13 @@ import { connect } from 'react-redux';
 import { addListItem } from '../../actions/index'
 import { getListState } from '../../selectors/listSelectors';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
+const element = <FontAwesomeIcon icon={faPlus} />
+
+
+
 class SearchResultCard extends React.Component {  
  
   handleAddListItem = () => {    
@@ -11,34 +18,25 @@ class SearchResultCard extends React.Component {
 
   render() {
     return (
-      <div className="search-card-closed">
-        <ul>       
+      <div>
+        <ul className="search-content-closed"> 
           <li>
-            <img
-              className="poster"
-              src={this.props.poster}
-              alt={`Avatar for ${this.props.title}`}
-            />
-          </li>
-          <li className="">
             <h2>
              {this.props.title}           
             </h2>
           </li>
           <li>
-           <h2>
-              <a href={this.props.imdbID}>
-                {this.props.year}
-              </a>
-            </h2>
+            <h3>
+              {this.props.year}              
+            </h3>
           </li>
           <li>
-            <button
+            <button 
               type='submit'
               onClick={this.handleAddListItem}
               disabled={this.props.results.allIds.includes(this.props.imdbID) || this.props.results.allIds.length >= 5}
             >
-              Submit
+              Add
             </button>
           </li>      
         </ul>      
