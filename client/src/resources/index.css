@@ -282,7 +282,7 @@ header{
 .banner-top {
   border-radius: 4px;
   margin-top: 10px;
-  background-color: #42474C;
+  background-color: #4f685cea;
   color:#fff;
 }
 
@@ -304,13 +304,13 @@ header{
 }
 
 .banner-card:not(:last-child) {
-  border-right: 1px solid #fbf5eb;
+  border-right: 2px solid #fbf5eb;
 }
 
 .banner-card-left {
   width: 25%;
   margin: 4px 0 4px 4px;
-  border-right: 1px solid #6b7177;
+  border-right: 1px solid #fbf5eb;
 
 }
 
