@@ -3,15 +3,7 @@ import { connect } from 'react-redux';
 import { addListItem } from '../../actions/index'
 import { getListState } from '../../selectors/listSelectors';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-
-const element = <FontAwesomeIcon icon={faPlus} />
-
-
-
-class SearchResultCard extends React.Component {  
- 
+class SearchResultCard extends React.Component {   
   handleAddListItem = () => {    
     this.props.addListItem(this.props);
   }

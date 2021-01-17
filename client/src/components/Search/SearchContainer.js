@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import SearchResultCard from './SearchResultCard';
+import Loading from '../Loading';
 
 function DisplayResults ({ results }) {
   return (
@@ -48,7 +49,6 @@ class SearchContainer extends Component {
     error: null
   }
 
-
   handleChange = (event) => {
     this.setState({
       title: event.target.value
@@ -57,7 +57,7 @@ class SearchContainer extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.setState({
-      results: [],
+      results: null,
       error: null
     });
 
@@ -73,6 +73,11 @@ class SearchContainer extends Component {
         })
       });
   };  
+
+  isLoading = () => {
+    const {results} = this.state;
+    return results === null && this.state.error === null;
+  };
 
   render(){
     const { results, error} = this.state;
@@ -96,6 +101,9 @@ class SearchContainer extends Component {
               <i className="fa fa-search"></i>
             </button>
           </form>
+
+          {this.isLoading() && <Loading text='Searching'/>}
+
           {error && <p className="error">No results</p>}
 
           {results && <DisplayResults results={results}/>}
